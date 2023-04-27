@@ -34,12 +34,14 @@ namespace BankAccountNS
         {
             if (amount > m_balance)
             {
-                throw new System.ArgumentOutOfRangeException("amount", amount, DebitAmountExceedsBalanceMessage);
+                throw new System.ArgumentOutOfRangeException("amount", amount, 
+                    DebitAmountExceedsBalanceMessage);
             }
 
-            if (amount < 0)
+            if (amount < 0) 
             {
-                throw new System.ArgumentOutOfRangeException("amount", amount, DebitAmountLessThanZeroMessage);
+                throw new System.ArgumentOutOfRangeException("amount", amount, 
+                    DebitAmountLessThanZeroMessage);
             }
 
             m_balance -= amount; // intentionally incorrect code
